@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>¿Quieres ser mi novia?</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #333;
+    }
+    .card {
+      background: white;
+      padding: 2.5rem 2rem;
+      border-radius: 20px;
+      text-align: center;
+      max-width: 420px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+    h1 {
+      margin-bottom: 1rem;
+      font-size: 2rem;
+    }
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    button {
+      border: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 999px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    .yes {
+      background: #ff5f8a;
+      color: white;
+    }
+    .no {
+      background: #e0e0e0;
+    }
+    .screen {
+      display: none;
+    }
+    .screen.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+
+    <!-- Pantalla 1 -->
+    <div class="screen active" id="screen1">
+      <h1>Mi Amor ❤️</h1>
+      <p>
+         María, se que no ha pasado mucho tiempo desde que nos conocimos pero desde entonces me has hecho muy feliz y se que hemos estado este tiempo              saliendo juntos y conociendonos pero nunca te lo había preguntado de verdad y bueno…
+        <br /><br />
+        ¿Quieres ser mi novia?
+      </p>
+      <div class="buttons">
+        <button class="yes" onclick="goToScreen2()">Sí 🥰</button>
+        <button class="no" onclick="alert('Esa opción no es válida 😌')">No 🙈</button>
+      </div>
+    </div>
+
+    <!-- Pantalla 2 -->
+    <div class="screen" id="screen2">
+      <h1> Sabía que aceptariás 💖✨</h1>
+      <p>
+        Pero y ahora que ya somos novios de verdad…
+        <br /><br />
+        ¿Quieres ser mi San Valentin? 💘
+      </p>
+      <div class="buttons">
+        <button class="yes" onclick="finalYes()">Sí, obvio 😍</button>
+        <button class="no" onclick="alert('Piénsalo otra vez 👀❤️')">Déjame pensarlo 🙈</button>
+        <button class="yes" onclick="alert('Cita calentita en mi piso el dia 14 💐 (Habrá Nestea 🙈)')">Sí, pero con cita en el piso calentitos 🍷</button>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function goToScreen2() {
+      document.getElementById('screen1').classList.remove('active');
+      document.getElementById('screen2').classList.add('active');
+    }
+
+    function finalYes() {
+      alert('Prometo hacerte todo lo feliz que pueda y dar lo mejor de mi para que estes siempre contenta y a mi lado 💕');
+    }
+  </script>
+</body>
+</html>
